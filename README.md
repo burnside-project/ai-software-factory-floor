@@ -19,7 +19,7 @@ Instead of allowing an agent to freely modify an entire repository, this pipelin
 
 The result is a safer and more scalable approach to AI-assisted software engineering.
 
-![Architecture diagram](./iScreen Shoter - PyCharm - 260513120729.png)
+![audit](audit.png)
 
 
 ---
