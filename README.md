@@ -11,7 +11,7 @@
 An opinionated, spec-first AI SDLC for delivering software with Claude Code —
 plus the GitHub-native gates that make each stage enforced, not just convention.
 
-- **architecture**
+- [architecture](ai-software-factory.md)
 
 It encodes a 12-phase delivery flow — idea → spec → architecture & security review
 → agile tickets → test plan → **spec gate** → implementation → verification →
