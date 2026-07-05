@@ -1,5 +1,11 @@
 # ai-software-factory
 
+<p align="center">
+    <a href="https://aws.amazon.com/marketplace/pp/prodview-vpbhhtmdwzezy">
+    <img src="factory.png" width="100%" alt="Book a Meeting">
+  </a>
+</p>
+
 An opinionated, spec-first AI SDLC for delivering software with Claude Code —
 plus the GitHub-native gates that make each stage enforced, not just convention.
 
