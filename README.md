@@ -1,10 +1,11 @@
 # ai-software-factory
 
 <p align="center">
-    <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0jW4tXS9oprMT773HT843ndiFdPXAK7pro0FhX3mCpVWyYE0Y0adsAe-cPVrVSqrQ0Bm2n4cPS">
     <img src="factory.png" width="100%" alt="Book a Meeting">
-  </a>
 </p>
+<br>
+
+    <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0jW4tXS9oprMT773HT843ndiFdPXAK7pro0FhX3mCpVWyYE0Y0adsAe-cPVrVSqrQ0Bm2n4cPS"> Book a Meeting</a>
 
 An opinionated, spec-first AI SDLC for delivering software with Claude Code —
 plus the GitHub-native gates that make each stage enforced, not just convention.
