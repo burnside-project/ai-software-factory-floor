@@ -7,9 +7,21 @@
 
 [📅 Book a Meeting](https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0jW4tXS9oprMT773HT843ndiFdPXAK7pro0FhX3mCpVWyYE0Y0adsAe-cPVrVSqrQ0Bm2n4cPS)
 
-<br>
-An opinionated, spec-first AI SDLC for delivering software with Claude Code —
-plus the GitHub-native gates that make each stage enforced, not just convention.
+
+> **An opinionated, spec-first AI SDLC for shipping software with Claude Code as the Builder and an independent AI Auditor.**
+>
+> The auditor can be **GPT-5.5, DeepSeek V4, Gemini, Kimi, Qwen,** or any other reasoning model—but it should behave like a completely different senior engineer:
+>
+> - Different model
+> - Different prompt
+> - Different reasoning style
+> - Different conclusions
+> - Read-only review posture
+>
+> The goal is **not** to help the coding agent write code.
+> The goal is to **challenge** its work before humans merge it.
+>
+> Built around **GitHub-native gates**—Specifications, Issues, Branches, Pull Requests, Tests, Reviews, and Audit Reports—so every stage of the SDLC is **enforced, not just convention**.
 
 - [architecture](ai-software-factory.md)
 
