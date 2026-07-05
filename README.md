@@ -1,7 +1,7 @@
 # ai-software-factory
 
 <p align="center">
-    <a href="https://aws.amazon.com/marketplace/pp/prodview-vpbhhtmdwzezy">
+    <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0jW4tXS9oprMT773HT843ndiFdPXAK7pro0FhX3mCpVWyYE0Y0adsAe-cPVrVSqrQ0Bm2n4cPS">
     <img src="factory.png" width="100%" alt="Book a Meeting">
   </a>
 </p>
