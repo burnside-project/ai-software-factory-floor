@@ -2,7 +2,7 @@
 
 
 <p align="center">
-    <img src="factory.png" width="100%" alt="Book a Meeting">
+    <img src="image.png" width="100%" alt="Book a Meeting">
 </p>
 <br>
 
