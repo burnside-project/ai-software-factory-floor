@@ -1,4 +1,4 @@
-# ai-software-factory-floor (Open Source Teaser)
+# ai-software-factory-floor
 
 **GitHub-native gates for your SDLC — no AI agents required.**
 
