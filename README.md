@@ -13,7 +13,7 @@
 See how we enforce a 14-phase delivery flow using only GitHub-native features:
 branch rulesets, CODEOWNERS, required checks, and issue templates.
 
-> **Note**: This is an **open source**. The full AI-First Software Factory with 14 AI agents, DeepSeek audit integration, and autonomous floor motor is available under commercial license. [Contact us](mailto:sales@dataalgebra.engineering) for the production version.
+> **Note**: This is an **open source**. The full AI-First Software Factory with 14 AI agents, DeepSeek audit integration, and autonomous floor motor is available under commercial license. [Contact us](mailto:hello@burnsideproject.ai) for the production version.
 
 ## What You Get (Open Source)
 
