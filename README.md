@@ -63,8 +63,8 @@ This repo demonstrates the **GitHub-native gates** portion of the AI-First Softw
 
 ## Next Steps
 
-- Read [`docs/architecture/ai-software-factory.md`](docs/architecture/ai-software-factory.md) to understand the 14-phase flow
-- Read [`templates/factory/README.md`](templates/factory/README.md) for gate definitions
+- Read [`ai-software-factory.md`](ai-software-factory.md) to understand the 14-phase flow
+- Read [`README.md`](templates/factory/README.md) for gate definitions
 - Try the Product Manager agent: `.claude/agents/product-manager.md`
 - Want the full system? [Contact us](mailto:hello@burnsideproject.ai) for the commercial version
 
