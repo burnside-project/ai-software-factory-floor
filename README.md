@@ -1,6 +1,12 @@
 # ai-software-factory-floor (Open Source)
 
-![Architecture](image.png)
+<p align="center">
+    <img src="image.png" width="100%" alt="Software Factory">
+
+</p>
+
+📅 <a href="https://github.com/burnside-project/pg-cdc/blob/main/assets/pg-cdc-flyer.png"> Book a Meeting</a>
+<br>
 
 **GitHub-native gates for your SDLC — no AI agents required.**
 
