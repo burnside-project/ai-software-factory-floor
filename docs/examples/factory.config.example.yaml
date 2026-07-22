@@ -1,0 +1,42 @@
+# =============================================================================
+# EXAMPLE ONLY — factory.config.yaml for schema factory.sh/v1
+# =============================================================================
+# This is a documentation example. It is NOT an active instance config and does
+# NOT ship in the vendored bundle (templates/factory/…): an instance config
+# carries a real org and shipping it into a consumer is a cross-tenant leak
+# (ADR-0015 Decision 5). To adopt the framework, copy this to `factory.config.yaml`
+# at your repo root and replace every value below with your own.
+#
+# Schema: templates/factory/schema/factory.config.v1.md
+# Secrets are NEVER values here — only { name, scope } references. The material
+# lives in GitHub; `factory validate` refuses secret-shaped values.
+# =============================================================================
+
+apiVersion: factory.sh/v1
+kind: FactoryInstance
+metadata:
+  name: example-factory                     # a label for your instance; GitHub never sees it
+
+spec:
+  github:
+    organization: your-org                  # <-- your GitHub org slug
+    project:
+      title: "Your Delivery Board"           # <-- your org Project title (resolved by title)
+
+  repositories:
+    naming:
+      allowedPatterns:                       # <-- repo-name policy for your org (ERE)
+        - '^your-prefix-.*$'
+        - '.*-delivery$'
+        - '^roadmap$'
+
+  runners:
+    labels: []                               # [] = github-hosted; e.g. [self-hosted] for your runners
+
+  rulesets:
+    routingFile: .factory/ruleset-map.tsv    # your repo -> ruleset routing table (authored)
+
+  identities:
+    floor:                                   # the floor-motor builder App identity (optional)
+      appIdVariable:    { name: FLOOR_APP_ID,          scope: org }   # a GitHub *variable* name
+      privateKeySecret: { name: FLOOR_APP_PRIVATE_KEY, scope: org }   # a GitHub *secret* name — NEVER the key itself
