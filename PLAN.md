@@ -1,12 +1,22 @@
-# Open Source - COMPLETE
+# Plan: ai-software-factory → Open Source
 
-## Summary
+## Current State
+- Single repo: `/Applications/my_projects/dataalgebra_AI_POC/ai-software-factory`
+- Closed source (contains secret sauce)
+- 14 AI agents, DeepSeek audit, floor motor, template pack
 
-Open Source `/Applications/my_projects/dataalgebra_AI_POC/ai-software-factory-floor` to become an open source that demonstrates value without giving away the secret sauce.
+## Target State
+- **Open source**: `ai-software-factory-floor` (this repo)
+- **Closed source full**: `ai-software-factory` (separate repo)
+- **Result**: Both repos coexist, open source
 
-## What Was Done
+---
 
-### Secret Sauce Removed ✅
+## Implementation Status: ✅ COMPLETE
+
+### What Was Done
+
+#### 1. Removed Secret Sauce Files
 
 **Scripts Removed**:
 - `scripts/provision.sh` — Full orchestration logic
@@ -37,10 +47,13 @@ Open Source `/Applications/my_projects/dataalgebra_AI_POC/ai-software-factory-fl
 - `.claude/settings.local.json` — Internal operational patterns
 - `templates/factory/RUNBOOK-floor-motor.md` — Floor motor runbook
 - `templates/factory/SMOKE-TEST-floor-motor.md` — Floor motor smoke test
-- Multiple ADRs about DeepSeek and floor motor
-- Old architecture doc and screenshots
+- `docs/decisions/ADR-0002-autonomous-floor-motor.md` — Floor motor decision
+- `docs/decisions/ADR-0008-independent-audit-gate.md` — DeepSeek decision
+- `docs/decisions/ADR-0009-required-audit-check-collision.md` — Audit check decision
+- `docs/decisions/ADR-0010-audit-no-branch-commit.md` — Audit commit decision
+- `docs/decisions/ADR-0014-stage-transition-arbiter.md` — Stage arbiter decision
 
-### Documentation Modified ✅
+#### 2. Modified Documentation
 
 **Files Modified**:
 - `README.md` — Updated to reflect open source
@@ -54,8 +67,10 @@ Open Source `/Applications/my_projects/dataalgebra_AI_POC/ai-software-factory-fl
 - `QUICK-REFERENCE.md` — Removed DeepSeek references
 - `OVERVIEW.md` — Removed DeepSeek references
 - `scripts/bootstrap-project.sh` — Removed DeepSeek references
+- `scripts/enable-audit.sh` — Removed (secret sauce)
+- `.claude/commands/feature-delivery.md` — Removed (secret sauce)
 
-### What Remains (Safe to Open Source) ✅
+#### 3. What Remains (Open Source)
 
 **Agents** (13 total):
 - `.claude/agents/product-manager.md` — Spec-first approach
@@ -70,7 +85,7 @@ Open Source `/Applications/my_projects/dataalgebra_AI_POC/ai-software-factory-fl
 - `.claude/agents/tech-lead.md` — Generic tech lead
 - `.claude/agents/test-engineer.md` — Generic testing
 - `.claude/agents/compliance-reviewer.md` — Generic compliance
-- `.claude/agents/auditor.md` — Generic audit
+- `.claude/agents/auditor.md` — Generic audit (references but doesn't contain DeepSeek logic)
 
 **Commands** (1 remaining):
 - `.claude/commands/post-merge.md` — Archive (no orchestration)
@@ -113,6 +128,15 @@ Open Source `/Applications/my_projects/dataalgebra_AI_POC/ai-software-factory-fl
 - `docs/examples/` — Examples
 - `docs/decisions/` — Decisions (non-DeepSeek)
 
+**Directories**:
+- `.claude/` — 13 AI agents + commands
+- `docs/` — Documentation
+- `scripts/` — 9 provisioning scripts
+- `templates/` — All templates
+- `knowledge/` — Knowledge base
+
+---
+
 ## IP Protection Status
 
 ### ✅ Protected (Removed)
@@ -128,6 +152,15 @@ Open Source `/Applications/my_projects/dataalgebra_AI_POC/ai-software-factory-fl
 - Provisioning scripts — Generic setup logic
 - Templates — Standard spec/ticket templates
 
+### Why This Is Safe
+1. **Agents are generic** — No proprietary logic, just role definitions
+2. **Gates are standard** — Branch rulesets, CODEOWNERS, required checks
+3. **Templates are standard** — Spec, ticket, review templates
+4. **No orchestration** — Can't run full AI SDLC without closed source
+5. **No DeepSeek** — Can't run independent audit without closed source
+
+---
+
 ## Value Proposition
 
 ### Open Source
@@ -140,13 +173,15 @@ Open Source `/Applications/my_projects/dataalgebra_AI_POC/ai-software-factory-fl
 - **What you can do**: Full AI SDLC with autonomous delivery
 - **Value**: Production-grade, battle-tested, proprietary IP
 
+---
+
 ## Next Steps
 
-1. ✅ Review the Open Source repo
-2. ✅ Test the provisioning scripts
-3. Create the open source repo
-4. Write the blog post
-5. Launch the open source
+1. **Review** the implemented repo
+2. **Test** the provisioning scripts
+3. **Create** the open source repo
+4. **Write** the blog post
+5. **Launch** the open source
 
 ## Contact
 

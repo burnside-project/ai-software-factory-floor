@@ -1,11 +1,11 @@
-# ai-software-factory-floor
+# ai-software-factory-floor (Open Source)
 
 **GitHub-native gates for your SDLC — no AI agents required.**
 
 See how we enforce a 14-phase delivery flow using only GitHub-native features:
 branch rulesets, CODEOWNERS, required checks, and issue templates.
 
-> **Note**: This is an **open source teaser**. The full AI-First Software Factory with 14 AI agents, DeepSeek audit integration, and autonomous floor motor is available under commercial license. [Contact us](mailto:sales@dataalgebra.engineering) for the production version.
+> **Note**: This is an **open source**. The full AI-First Software Factory with 14 AI agents, DeepSeek audit integration, and autonomous floor motor is available under commercial license. [Contact us](mailto:sales@dataalgebra.engineering) for the production version.
 
 ## What You Get (Open Source)
 
@@ -45,7 +45,7 @@ Most AI SDLCs lack enforcement. Specs get ignored. Code gets merged without revi
 
 Gates fix this by making each SDLC stage **machine-enforced**, not just convention.
 
-## Open Source Teaser
+## Open Source
 
 This repo demonstrates the **GitHub-native gates** portion of the AI-First Software Factory:
 

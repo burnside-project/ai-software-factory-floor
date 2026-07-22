@@ -1,4 +1,4 @@
-# IP Protection Strategy for Open Source Teaser
+# IP Protection Strategy for Open Source
 
 ## Current State (NOT Protected)
 
@@ -38,7 +38,7 @@
 ## IP Protection Options
 
 ### Option 1: Remove .claude/ and scripts/ entirely
-**Result**: Open source teaser has NO AI agents, NO provisioning scripts
+**Result**: Open source has NO AI agents, NO provisioning scripts
 
 **Pros**:
 - Zero IP exposure
@@ -54,7 +54,7 @@
 ---
 
 ### Option 2: Keep only PM agent + remove orchestration
-**Result**: Open source teaser has Product Manager agent only, no full workflow
+**Result**: Open source has Product Manager agent only, no full workflow
 
 **What stays**:
 - `.claude/agents/product-manager.md` — PM agent
@@ -101,7 +101,7 @@
 ---
 
 ### Option 3: Keep only PM agent + remove all orchestration + remove scripts
-**Result**: Open source teaser has Product Manager agent only, no workflow, no provisioning
+**Result**: Open source has Product Manager agent only, no workflow, no provisioning
 
 **What stays**:
 - `.claude/agents/product-manager.md` — PM agent only
@@ -127,7 +127,7 @@
 ---
 
 ### Option 4: Replace orchestration with placeholder
-**Result**: Open source teaser has all agents, but orchestration is replaced with "contact us"
+**Result**: Open source has all agents, but orchestration is replaced with "contact us"
 
 **What's modified**:
 - `feature-delivery.md` — replaced with "contact us for full workflow"
@@ -151,7 +151,7 @@
 ---
 
 ### Option 5: Create simplified open source version
-**Result**: Open source teaser has simplified agents + simplified provisioning
+**Result**: Open source has simplified agents + simplified provisioning
 
 **What's created**:
 - Simplified PM agent (reduced capabilities)
@@ -211,19 +211,19 @@ rm scripts/bootstrap-project.sh
 
 #### Update documentation:
 ```bash
-# OPEN-SOURCE-TEASER-STRATEGY.md
+# OPEN-SOURCE-STRATEGY.md
 # Update to reflect Option 2
 
-# REFACTORING-PLAN.md
+# PLAN.md
 # Update to reflect Option 2
 
 # README.md
-# Update to reflect open source teaser
+# Update to reflect open source
 ```
 
 ### Result
 
-**Open source teaser has**:
+**Open source has**:
 - ✅ Product Manager agent (demonstrates spec-first)
 - ✅ Generic agents (architect, security, etc.)
 - ✅ GitHub-native gates
