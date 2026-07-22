@@ -1,0 +1,34 @@
+{
+  "_comment": "GREENFIELD template ruleset — for NEW repos that adopt the factory ci.yml (jobs: lint/test/build/verification/audit). TWO DISTINCT audit gates exist and must not be conflated: (1) 'audit' — the ci.yml STATIC committed-report gate (finds committed audit-report*.md under specs/** and verification/reviews/**, fails only on a '**VERDICT:** ... Fail' line, lenient/green when no report is present); it is always present in greenfield, so it is required here. (2) 'independent-audit' — the LIVE independent DeepSeek verdict (independent-audit.yml's own job/run conclusion, ADR-0009); it is required ONLY on repos that have landed independent-audit.yml via scripts/enable-audit.sh, added per-repo at activation via scripts/reconcile-ci-checks.sh — it is NEVER a greenfield default (requiring a context that never reports would dead-block every PR), so it is deliberately absent from required_status_checks here. Per-repo variant rulesets (routed via .factory/ruleset-map.tsv) may require NEITHER 'audit' NOR 'independent-audit' because they run neither audit job (OQ3 opt-out). setup-repo.sh selects the ruleset data-driven via the ruleset-map.tsv manifest (repo basename -> variant file); precedence is RULESET= override > .factory/ruleset-map.tsv > this greenfield ruleset.json (the default for any repo not in the manifest). Start enforcement=evaluate, flip to active when green.",
+  "name": "factory-main-gates",
+  "target": "branch",
+  "enforcement": "evaluate",
+  "conditions": { "ref_name": { "include": ["refs/heads/main"], "exclude": [] } },
+  "rules": [
+    { "type": "deletion" },
+    { "type": "non_fast_forward" },
+    {
+      "type": "pull_request",
+      "parameters": {
+        "required_approving_review_count": 1,
+        "require_code_owner_review": true,
+        "require_last_push_approval": false,
+        "dismiss_stale_reviews_on_push": true,
+        "required_review_thread_resolution": true
+      }
+    },
+    {
+      "type": "required_status_checks",
+      "parameters": {
+        "strict_required_status_checks_policy": true,
+        "required_status_checks": [
+          { "context": "lint" },
+          { "context": "test" },
+          { "context": "build" },
+          { "context": "verification" },
+          { "context": "audit" }
+        ]
+      }
+    }
+  ]
+}

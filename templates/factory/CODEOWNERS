@@ -1,0 +1,36 @@
+# Maps .ai review roles to ENFORCED approvals (branch protection requires CODEOWNERS).
+#
+# Every @team below MUST exist as an org team with >=1 member, or GitHub treats that
+# path as having no required reviewer and the rule silently FAILS OPEN (audit N5).
+# Run `scripts/setup-teams.sh` to verify before flipping rulesets to 'active'.
+#
+# Reconciled to the org's actual teams: there is no `product` or `qa-engineer` team,
+# so intake maps to `architect` and QA folds into `test-engineer`; `data-engineering`
+# and `sre` are wired in. See ADR-0001 for the 2-human / 8-team gate model.
+
+# Specs require architecture + security sign-off (Phases 2 & 3)
+/docs/specs/**            @your-org/architect @your-org/security-architect
+/specs/**                 @your-org/architect @your-org/security-architect
+# Briefs / intake — no `product` team in the org; architect owns intake for now.
+# Create a `product` team and add it here if you want a distinct product-manager gate.
+/docs/briefs/**           @your-org/architect
+
+# Code (Phase 7)
+/internal/**              @your-org/backend-engineer
+/cmd/**                   @your-org/backend-engineer
+# Data / schema / migrations
+/migrations/**            @your-org/data-engineering
+/internal/**/store/**     @your-org/data-engineering
+# Deploy + ops
+/deploy/**                @your-org/release-engineer @your-org/sre
+
+# Tests + verification (Phases 5 & 9; QA folds into test-engineer — no qa-engineer team)
+/verification/**          @your-org/test-engineer
+/**/*_test.go             @your-org/test-engineer
+
+# Governance-sensitive surfaces
+/internal/issuer/**       @your-org/security-architect
+/internal/audit/**        @your-org/compliance-reviewer
+
+# CI/deploy config + ops
+/.github/**               @your-org/release-engineer @your-org/sre

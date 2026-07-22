@@ -1,0 +1,18 @@
+{
+  "_comment": "Naming ruleset — gates feature-branch names on ALL non-default branches. Applied by setup-repo.sh alongside the per-repo gate ruleset. Allowed types: feat|fix|chore|docs|refactor|test|perf|ci|factory, then '/<slug>' (lowercase, dotted/dashed). enforcement starts 'evaluate'; flip to 'active' once teams are used to it.",
+  "name": "factory-naming",
+  "target": "branch",
+  "enforcement": "evaluate",
+  "conditions": { "ref_name": { "include": ["~ALL"], "exclude": ["~DEFAULT_BRANCH"] } },
+  "rules": [
+    {
+      "type": "branch_name_pattern",
+      "parameters": {
+        "name": "feature-branch naming (<type>/<slug>)",
+        "negate": false,
+        "operator": "regex",
+        "pattern": "^(feat|fix|chore|docs|refactor|test|perf|ci|factory)/[a-z0-9][a-z0-9._/-]*$"
+      }
+    }
+  ]
+}

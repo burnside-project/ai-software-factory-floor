@@ -1,0 +1,51 @@
+# THE STAGE CONTRACT — single source of truth for the factory line (SPEC-016 / TICKET-067).
+#
+# Follows the ruleset-map.tsv precedent (ADR-0006): a reviewable data file the scripts read,
+# not a code generator. Before this file the Stage vocabulary existed in FIVE copies, in three
+# different shapes — setup-project.sh, board-sync.sh, metrics.sh, setup-repo.sh and
+# PROJECTS.md — held in step by a comment saying "must match setup-project.sh". They had
+# already drifted: PROJECTS.md documented a different seven-option vocabulary entirely.
+#
+# COLUMNS (tab-separated):
+#   1  stage-label   the `stage:*` GitHub label, or `-` for an option with no label
+#   2  Stage-option  the Projects v2 "Stage" single-select option
+#   3  color         label colour (hex, no `#`); empty when column 1 is `-`
+#   4  description   label description; empty when column 1 is `-`
+#
+# READ BY:
+#   setup-project.sh  --single-select-options  <- column 2, deduped, IN THIS ORDER
+#   board-sync.sh     label -> Stage lookup    <- columns 1,2
+#   metrics.sh        STAGES array             <- column 2, deduped, in order
+#   setup-repo.sh     stage:* label rows       <- columns 1,3,4
+#   PROJECTS.md       documented vocabulary    <- asserted against this file by the test
+#
+# RULES
+#   - ORDER IS SIGNIFICANT. Column 2 deduped top-to-bottom IS the board's option order, and
+#     the options are byte-identical to the pre-SPEC-016 script. Do not reorder or rename to
+#     "tidy" them: renaming a Projects v2 option does not migrate existing cards, and the
+#     upgrade path is additive-only.
+#   - Two labels MAY map to one option (spec/spec-review -> Spec; verify/audit -> Verify).
+#   - An option with `-` in column 1 is INTENTIONALLY UNMAPPED: it is set by means other than
+#     label sync (see below), not broken. board-sync.sh exits 0 on a label it cannot map.
+#   - Adding an option here without thinking through who WRITES it produces an empty column.
+#     The board is additive-only; an unused field/option cannot later be removed.
+#
+# INTENTIONALLY UNMAPPED OPTIONS (spec AC5) — set by other means, not by `stage:*` label sync:
+#   Brief     pre-spec intake; an item sits here before it has a stage: label at all
+#   Tickets   the tech-lead breakdown step; no label marks it (specs carry stage:spec throughout)
+#   Deploy    driven by deploy.yml environment progression, not by an issue label
+#   Observe   post-deploy monitoring; entered by incident/observation, not by a label
+#
+# stage-label	Stage-option	color	description
+-	Brief
+stage:spec	Spec	d4c5f9	floor-motor upstream entry (spec→arch→security→tickets→test-plan)
+stage:spec-review	Spec	8a63d6	spec gate — waiting on human approval before build
+-	Tickets
+stage:code	Code	fbca04	in implementation (floor-motor build entry point)
+stage:test	Test	c5def5	builder running tests
+stage:verify	Verify	bfe5bf	verification doc written
+stage:audit	Verify	f9d0c4	under auditor review
+stage:review	Review	1d76db	in review — waiting on human
+-	Deploy
+-	Observe
+stage:done	Done	5319e7	merged and closed
