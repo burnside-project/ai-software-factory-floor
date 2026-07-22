@@ -66,7 +66,7 @@ This repo demonstrates the **GitHub-native gates** portion of the AI-First Softw
 - Read [`docs/architecture/ai-software-factory.md`](docs/architecture/ai-software-factory.md) to understand the 14-phase flow
 - Read [`templates/factory/README.md`](templates/factory/README.md) for gate definitions
 - Try the Product Manager agent: `.claude/agents/product-manager.md`
-- Want the full system? [Contact us](mailto:sales@dataalgebra.engineering) for the commercial version
+- Want the full system? [Contact us](mailto:hello@burnsideproject.ai) for the commercial version
 
 ## What's in here
 
@@ -97,5 +97,5 @@ MIT
 
 For the full AI-First Software Factory with 14 AI agents, DeepSeek audit integration, and autonomous floor motor:
 
-- Email: sales@dataalgebra.engineering
-- Website: https://dataalgebra.engineering
+- Email: hello@burnsideproject.ai
+- Website: https://burnsideproject.ai
