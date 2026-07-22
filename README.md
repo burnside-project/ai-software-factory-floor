@@ -1,5 +1,7 @@
 # ai-software-factory-floor (Open Source)
 
+![Architecture](image.png)
+
 **GitHub-native gates for your SDLC — no AI agents required.**
 
 See how we enforce a 14-phase delivery flow using only GitHub-native features:
