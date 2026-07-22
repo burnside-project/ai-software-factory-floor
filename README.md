@@ -5,7 +5,7 @@
 
 </p>
 
-📅 <a href="https://github.com/burnside-project/pg-cdc/blob/main/assets/pg-cdc-flyer.png"> Book a Meeting</a>
+📅 <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0jW4tXS9oprMT773HT843ndiFdPXAK7pro0FhX3mCpVWyYE0Y0adsAe-cPVrVSqrQ0Bm2n4cPS"> Book a Meeting</a>
 <br>
 
 **GitHub-native gates for your SDLC — no AI agents required.**
