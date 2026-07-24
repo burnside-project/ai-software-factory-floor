@@ -1,101 +1,223 @@
-# ai-software-factory-floor (Open Source)
-
 <p align="center">
     <img src="image.png" width="100%" alt="Software Factory">
 
 </p>
 
+<p align="center">
+  <strong>Build with one AI. Verify with another. Merge with confidence.</strong>
+</p>
+
+
 📅 <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0jW4tXS9oprMT773HT843ndiFdPXAK7pro0FhX3mCpVWyYE0Y0adsAe-cPVrVSqrQ0Bm2n4cPS"> Book a Meeting</a>
 <br>
 
-**GitHub-native SDLC gates powered by Claude for implementation and an independent AI model for auditing—separate prompts, separate reasoning, shared responsibility.**
+------------------------------------------------------------------------
 
-See how we enforce a 14-phase delivery flow using only GitHub-native features:
-branch rulesets, CODEOWNERS, required checks, and issue templates.
+## What is AI Software Factory Floor?
 
-> **Note**: This is an **open source**. The full AI-First Software Factory with 14 AI agents, DeepSeek audit integration, and autonomous floor motor is available under commercial license. [Contact us](mailto:hello@burnsideproject.ai) for the production version.
+AI Software Factory Floor is an **opinionated, GitHub-native software
+delivery framework** that enforces a **spec-first Software Development
+Lifecycle (SDLC)** using AI.
 
-## What You Get (Open Source)
+Rather than treating AI as a coding assistant, this project treats
+software delivery like a production line:
 
-- ✅ 14-phase SDLC flow documentation
-- ✅ GitHub-native gate definitions (rulesets, CODEOWNERS, required checks)
-- ✅ Issue templates and labels (30+ for workflow stages, gates, priorities)
-- ✅ Project board configuration (org-level)
-- ✅ Product Manager agent (spec-first approach)
-- ✅ Generic agents (architect, security, backend, QA, etc.)
-- ✅ CI workflow templates
-- ✅ Provisioning scripts (setup gates, labels, project)
+-   **Claude** (or your preferred implementation model) writes the
+    software.
+-   **An independent AI model** audits the implementation using
+    different prompts, reasoning, and evaluation criteria.
+-   **GitHub quality gates** enforce every delivery stage.
+-   **Humans make the final merge decision.**
 
-## What's NOT Included (Closed Source)
+> **Independent implementation + independent verification = better
+> software.**
 
-- ❌ Full orchestration (`.claude/commands/feature-delivery.md`)
-- ❌ DeepSeek audit integration
-- ❌ Autonomous floor motor
-- ❌ Template pack provisioning system
-- ❌ Complete agent suite with orchestration
+------------------------------------------------------------------------
 
-## Quick Start
+# Why this project exists
 
-```bash
-# Provision gates on your repo
+Modern coding agents are excellent at writing code.
+
+Production software requires much more than code generation:
+
+-   Product specifications
+-   Architecture reviews
+-   Security reviews
+-   Test planning
+-   Verification
+-   Documentation
+-   Human approval
+
+Most AI workflows rely on convention.
+
+AI Software Factory Floor turns these engineering practices into
+**machine-enforced GitHub gates** so quality becomes part of the
+delivery pipeline---not an afterthought.
+
+------------------------------------------------------------------------
+
+# How it Works
+
+``` text
+Idea
+   │
+   ▼
+Product Specification
+   │
+   ▼
+Architecture & Security Review
+   │
+   ▼
+Implementation
+   │
+   │  Claude (or your preferred coding model)
+   ▼
+Verification & Audit
+   │
+   │  Independent AI model
+   ▼
+GitHub Quality Gates
+   │
+   ▼
+Human Approval
+   │
+   ▼
+Merge
+```
+
+------------------------------------------------------------------------
+
+# Core Principles
+
+-   📋 Specification before implementation
+-   🤖 Independent implementation and verification
+-   🚦 Machine-enforced quality gates
+-   👤 Humans approve every merge
+-   📚 Every engineering decision is traceable
+
+------------------------------------------------------------------------
+
+# Open Source Features
+
+## Spec-First SDLC
+
+-   14-phase delivery methodology
+-   Product specification templates
+-   Acceptance criteria
+-   Verification reports
+
+## GitHub Enforcement
+
+-   Branch rulesets
+-   CODEOWNERS
+-   Required status checks
+-   Issue templates
+-   Pull request templates
+-   Labels
+-   Project board configuration
+
+## AI Role Definitions
+
+-   Product Manager
+-   Architect
+-   Security
+-   Backend
+-   Frontend
+-   QA
+-   Documentation
+-   Additional Claude Code role subagents
+
+## Automation
+
+Provisioning scripts for:
+
+-   Labels
+-   Rulesets
+-   Project boards
+-   Repository configuration
+
+------------------------------------------------------------------------
+
+# Repository Layout
+
+  Path                   Description
+  ---------------------- ----------------------------------------------------
+  `.claude/agents/`      Claude Code role subagents
+  `.claude/commands/`    Public utility commands
+  `agents/`              Human-readable role definitions
+  `workflows/`           SDLC workflow documentation
+  `templates/`           Specifications, tickets and verification templates
+  `templates/factory/`   GitHub enforcement configuration
+  `docs/`                Architecture and implementation guides
+  `scripts/`             Repository provisioning
+  `knowledge/`           Reference material
+
+------------------------------------------------------------------------
+
+# Engineering Invariants
+
+-   No implementation before an approved specification.
+-   One ticket equals one independently shippable slice.
+-   Every acceptance criterion requires verification.
+-   AI may open pull requests.
+-   AI never approves its own work.
+-   Humans merge code.
+
+------------------------------------------------------------------------
+
+# Quick Start
+
+``` bash
 ./scripts/setup-repo.sh your-org/your-repo
+```
 
-# View the 14-phase flow
+``` bash
 cat docs/architecture/ai-software-factory.md
+```
 
-# See gate definitions
+``` bash
 cat templates/factory/README.md
 ```
 
-## Why Gates?
+------------------------------------------------------------------------
 
-Most AI SDLCs lack enforcement. Specs get ignored. Code gets merged without review.
+# Open Source vs Commercial
 
-Gates fix this by making each SDLC stage **machine-enforced**, not just convention.
+  Open Source                    Commercial
+  ------------------------------ -------------------------------
+  14-phase SDLC                  End-to-end orchestration
+  GitHub quality gates           Autonomous delivery motor
+  Claude Code role definitions   Multi-model orchestration
+  Repository provisioning        Independent AI audit pipeline
+  Documentation & templates      Enterprise deployment tooling
 
-## Open Source
+------------------------------------------------------------------------
 
-This repo demonstrates the **GitHub-native gates** portion of the AI-First Software Factory:
+# Philosophy
 
-- **14-phase flow**: idea → spec → architecture & security review → tickets → test plan → code → test → verify → docs → PR → merge
-- **GitHub-native enforcement**: Branch rulesets, CODEOWNERS, required checks, issue templates
-- **Spec-first approach**: Product Manager agent creates thin specs with acceptance criteria
+The innovation is **not** that AI writes code.
 
-## Next Steps
+The innovation is separating software delivery into independent
+responsibilities:
 
-- Read [`ai-software-factory.md`](ai-software-factory.md) to understand the 14-phase flow
-- Read [`README.md`](templates/factory/README.md) for gate definitions
-- Try the Product Manager agent: `.claude/agents/product-manager.md`
-- Want the full system? [Contact us](mailto:hello@burnsideproject.ai) for the commercial version
+-   One AI implements.
+-   One AI independently verifies.
+-   GitHub enforces quality gates.
+-   Humans approve production changes.
 
-## What's in here
+------------------------------------------------------------------------
 
-| Path | What it is |
-|---|---|
-| `.claude/agents/` | 13 native Claude Code subagents (one per role), with scoped tools |
-| `.claude/commands/` | `/post-merge` (archive only - orchestration is closed source) |
-| `agents/`, `workflows/` | Human-readable source-of-truth role cards and workflow |
-| `templates/` | Spec, ticket, and verification-report templates |
-| `templates/factory/` | GitHub enforcement layer — CODEOWNERS, issue + PR templates, rulesets |
-| `docs/` | Architecture, getting-started, delivery-ledger |
-| `scripts/` | Provisioning scripts (setup gates, labels, project) |
-| `knowledge/` | Knowledge base |
-
-## Core invariants (open source)
-
-- No code before an accepted spec and a `Ready` spec gate.
-- One ticket = one shippable slice; no unrelated refactors.
-- Every acceptance criterion has recorded test evidence.
-- Agents open PRs; **humans merge.**
-- Gates are checks; **no agent approves its own gate.**
-
-## License
+# License
 
 MIT
 
-## Contact
+------------------------------------------------------------------------
 
-For the full AI-First Software Factory with 14 AI agents, DeepSeek audit integration, and autonomous floor motor:
+# Commercial Edition
 
-- Email: hello@burnsideproject.ai
-- Website: https://burnsideproject.ai
+Interested in the complete AI Software Factory?
+
+-   **Website:** https://burnsideproject.ai
+-   **Email:** hello@burnsideproject.ai
+-   **Book a Meeting:**
+    https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0jW4tXS9oprMT773HT843ndiFdPXAK7pro0FhX3mCpVWyYE0Y0adsAe-cPVrVSqrQ0Bm2n4cPS
