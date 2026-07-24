@@ -54,6 +54,18 @@ AI Software Factory Floor turns these engineering practices into
 **machine-enforced GitHub gates** so quality becomes part of the
 delivery pipeline---not an afterthought.
 
+<p align="center">
+    <img src="111.png" width="100%" alt="Github Software Factory">
+
+</p>
+
+------------------------------------------------------------------------
+
+<p align="center">
+    <img src="1112.png" width="100%" alt="Github Software Factory">
+
+</p>
+
 ------------------------------------------------------------------------
 
 # How it Works
