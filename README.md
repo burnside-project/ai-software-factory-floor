@@ -8,7 +8,7 @@
 📅 <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0jW4tXS9oprMT773HT843ndiFdPXAK7pro0FhX3mCpVWyYE0Y0adsAe-cPVrVSqrQ0Bm2n4cPS"> Book a Meeting</a>
 <br>
 
-**GitHub-native gates for your SDLC — no AI agents required.**
+**GitHub-native SDLC gates powered by Claude for implementation and an independent AI model for auditing—separate prompts, separate reasoning, shared responsibility.**
 
 See how we enforce a 14-phase delivery flow using only GitHub-native features:
 branch rulesets, CODEOWNERS, required checks, and issue templates.
